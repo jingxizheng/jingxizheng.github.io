@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,JVM," />
 
 
 
@@ -87,15 +87,21 @@
 
 
 
-<meta name="description" content="Pursue your object, be it what it will, steadily and indefatigably.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="jingxi.zheng's blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="1. 什么是类的加载类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。
+类加载器并不需要等到某个类被“首次主动使用”时再">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 类的加载机制">
+<meta property="og:url" content="http://yoursite.com/2017/03/21/Java 类的加载机制/index.html">
 <meta property="og:site_name" content="jingxi.zheng's blog">
-<meta property="og:description" content="Pursue your object, be it what it will, steadily and indefatigably.">
+<meta property="og:description" content="1. 什么是类的加载类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。
+类加载器并不需要等到某个类被“首次主动使用”时再">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/eZzl4LXykQxqialtFyQIAA8Mp2SfxSalH4LhZBYWxvUJiaiaTqAibgfFf0JKsLFZRuV59DgfSiazibKZyp4GCVic4GxLQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:updated_time" content="2017-03-21T10:17:46.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jingxi.zheng's blog">
-<meta name="twitter:description" content="Pursue your object, be it what it will, steadily and indefatigably.">
+<meta name="twitter:title" content="Java 类的加载机制">
+<meta name="twitter:description" content="1. 什么是类的加载类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。
+类加载器并不需要等到某个类被“首次主动使用”时再">
+<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz_jpg/eZzl4LXykQxqialtFyQIAA8Mp2SfxSalH4LhZBYWxvUJiaiaTqAibgfFf0JKsLFZRuV59DgfSiazibKZyp4GCVic4GxLQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1">
 
 
 
@@ -123,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/21/Java 类的加载机制/"/>
 
 
 
 
 
-  <title> jingxi.zheng's blog </title>
+  <title> Java 类的加载机制 | jingxi.zheng's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -154,9 +160,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,9 +243,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -271,10 +275,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/21/Java 类的加载机制/" itemprop="url">
-                  Java 类的加载机制
-                </a>
+                Java 类的加载机制
               
             
           </h1>
@@ -325,9 +326,7 @@
       
 
       
-        
-          
-            <h3 id="1-什么是类的加载"><a href="#1-什么是类的加载" class="headerlink" title="1. 什么是类的加载"></a>1. 什么是类的加载</h3><p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</p>
+        <h3 id="1-什么是类的加载"><a href="#1-什么是类的加载" class="headerlink" title="1. 什么是类的加载"></a>1. 什么是类的加载</h3><p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</p>
 <p>类加载器并不需要等到某个类被“首次主动使用”时再加载它，JVM规范允许类加载器在预料某个类将要被使用时就预先加载它，如果在预先加载的过程中遇到了.class文件缺失或存在错误，类加载器必须在程序首次主动使用该类时才报告错误（LinkageError错误）如果这个类一直没有被程序主动使用，那么类加载器就不会报告错误。</p>
 <blockquote>
 <p>加载.class文件的方式</p>
@@ -437,171 +436,74 @@
 <li>缓存机制:<br>缓存机制将会保证所有加载过的Class都会被缓存，当程序中需要使用某个Class时，类加载器先从缓存区寻找该Class，只有缓存区不存在，系统才会读取该类对应的二进制数据，并将其转换成Class对象，存入缓存区。这就是为什么修改了Class后，必须重启JVM，程序的修改才会生效</li>
 </ul>
 <h3 id="4-类的加载"><a href="#4-类的加载" class="headerlink" title="4. 类的加载"></a>4. 类的加载</h3>
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="jingxi.zheng">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="jingxi.zheng's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/21/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T13:33:32+08:00">
-                2017-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/java/" rel="tag"># java</a>
           
-            
+            <a href="/tags/JVM/" rel="tag"># JVM</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/21/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -609,6 +511,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -628,8 +534,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -682,6 +597,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是类的加载"><span class="nav-number">1.</span> <span class="nav-text">1. 什么是类的加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-类的生命周期"><span class="nav-number">2.</span> <span class="nav-text">2. 类的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-连接"><span class="nav-number">2.1.</span> <span class="nav-text">2.2. 连接</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-1-验证：确保被加载的类的正确性"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.2.1. 验证：确保被加载的类的正确性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-2-准备：为类的静态变量分配内存，并将其初始化为默认值"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.2.2. 准备：为类的静态变量分配内存，并将其初始化为默认值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-3-解析：把类中的符号引用转换为直接引用"><span class="nav-number">2.1.3.</span> <span class="nav-text">2.2.3. 解析：把类中的符号引用转换为直接引用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-初始化"><span class="nav-number">2.2.</span> <span class="nav-text">2.3. 初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JVM初始化步骤"><span class="nav-number">2.2.1.</span> <span class="nav-text">JVM初始化步骤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类初始化时机"><span class="nav-number">2.2.2.</span> <span class="nav-text">类初始化时机</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-结束生命周期"><span class="nav-number">2.3.</span> <span class="nav-text">2.3. 结束生命周期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-类加载器"><span class="nav-number">3.</span> <span class="nav-text">3. 类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JVM类加载机制"><span class="nav-number">3.1.</span> <span class="nav-text">JVM类加载机制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-类的加载"><span class="nav-number">4.</span> <span class="nav-text">4. 类的加载</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -787,6 +718,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
